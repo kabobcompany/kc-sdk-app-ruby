@@ -26,17 +26,16 @@ KcSdkApp.configure do |config|
   config.api_url = 'https://cloud.kabob.io'
 
   # you have to set your app access token
-  config.app_access_token = 'YOUR_APP_ACCESS_TOKEN'
+  config.access_token = 'YOUR_APP_ACCESS_TOKEN'
 
   # you can set a logger if you want logging api request
   # config.logger = Rails.logger
 end
-
 ```
 
 ## Usage
 
-[Api] (#api)
+[Api](#api)
 
 ### Api
 #### Orders
@@ -61,4 +60,3 @@ result = KcSdkApp.api.orders.consuming(company_id: 1, plan: 'go', scope: 'point'
 
 ## Contact
 The project's website is located at https://github.com/kabobcompany/kc-sdk-app-ruby
-Author: Chen, Yi-Cyuan (emn178@gmail.com)
