@@ -38,6 +38,21 @@ end
 [Api](#api)
 
 ### Api
+#### Apps
+##### current
+Get current app
+```ruby
+result = KcSdkApp.api.apps.current
+# { "uid": 'kabob.lookr' }
+```
+
+```ruby
+KcSdkApp.api.access_token = 'access_token_different_from_config'
+result = KcSdkApp.api.apps.current
+# { "uid": 'kabob.kiosk' }
+```
+
+
 #### Orders
 ##### surplus
 Get surplus
