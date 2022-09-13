@@ -22,8 +22,7 @@ RSpec.describe KcSdkApp::Api::Apps do
       let(:access_token) { 'abcd' }
 
       after do
-        api = KcSdkApp::Api.new
-        api.access_token = access_token
+        api = KcSdkApp::Api.new(access_token: access_token)
         api.apps.current
       end
 

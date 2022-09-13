@@ -8,8 +8,8 @@ module KcSdkApp
     attr_accessor :orders
     attr_accessor :apps
 
-    def initialize
-      self.access_token = KcSdkApp.configuration.access_token
+    def initialize(access_token: KcSdkApp.configuration.access_token)
+      self.access_token = access_token
       self.orders = KcSdkApp::Api::Orders.new(self)
       self.apps = KcSdkApp::Api::Apps.new(self)
     end

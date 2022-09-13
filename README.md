@@ -46,12 +46,6 @@ result = KcSdkApp.api.apps.current
 # { "uid": 'kabob.lookr' }
 ```
 
-```ruby
-KcSdkApp.api.access_token = 'access_token_different_from_config'
-result = KcSdkApp.api.apps.current
-# { "uid": 'kabob.kiosk' }
-```
-
 
 #### Orders
 ##### surplus
@@ -71,6 +65,16 @@ Consume order balance
 ```ruby
 result = KcSdkApp.api.orders.consuming(company_id: 1, plan: 'go', scope: 'point', quantity: 1, taken_at: '2020-12-25 00:00:00 UTC', uid: 'uid')
 # { "meta": { "code": 0 } }
+```
+
+#### Switch App
+The default app access token is the one defined in configuration.
+
+If you want to request data as other apps, new an api instance with other access_token.
+```ruby
+kc_api = KcSdkApp::Api.new(access_token: 'OTHER_APP_ACCESS_TOKEN')
+kc_api.apps.current
+# { "uid": 'kabob.other_app' }
 ```
 
 ## Contact
